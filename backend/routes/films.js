@@ -95,4 +95,12 @@ router.get(
   filmsController.getFilmDetails
 );
 
+// Delete film (admin only)
+router.delete(
+  '/:id',
+  authenticateToken,
+  authorizeRoles('admin'),
+  filmsController.deleteFilm
+);
+
 module.exports = router;

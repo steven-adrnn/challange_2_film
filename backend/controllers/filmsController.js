@@ -209,7 +209,6 @@ const searchFilms = async (req, res) => {
     }
 
     // Fuzzy search using PostgreSQL similarity function or ILIKE for title, description, artist name, genre name
-    // We will use ILIKE with OR conditions for simplicity here
     const whereConditions = [];
 
     if (q) {
@@ -318,6 +317,48 @@ const getFilmThumbnailUrl = async (req, res) => {
   }
 };
 
+const deleteFilm = async (req, res) => {
+  try {
+    const filmId = req.params.id;
+    const film = await Film.findByPk(filmId);
+    if (!film) {
+      return res.status(404).json({ message: 'Film not found' });
+    }
+
+    // Delete video from Supabase storage
+    if (film.video_path) {
+      const { error: videoDeleteError } = await supabase.storage
+        .from('film')
+        .remove([film.video_path]);
+      if (videoDeleteError) {
+        console.error('Error deleting video from storage:', videoDeleteError);
+      }
+    }
+
+    // Delete thumbnail from Supabase storage
+    if (film.thumbnail_path) {
+      const { error: thumbnailDeleteError } = await supabase.storage
+        .from('film')
+        .remove([film.thumbnail_path]);
+      if (thumbnailDeleteError) {
+        console.error('Error deleting thumbnail from storage:', thumbnailDeleteError);
+      }
+    }
+
+    // Remove associations
+    await film.setArtists([]);
+    await film.setGenres([]);
+
+    // Delete film record
+    await film.destroy();
+
+    res.json({ message: 'Film deleted successfully' });
+  } catch (error) {
+    console.error('Delete film error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 module.exports = {
   createFilm,
   updateFilm,
@@ -325,4 +366,5 @@ module.exports = {
   getFilmDetails,
   getFilmVideoUrl,
   getFilmThumbnailUrl,
+  deleteFilm,
 };

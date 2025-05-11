@@ -55,6 +55,7 @@ The Short Film Festival Web Application consists of three main components:
 | GET    | /api/films/:id        | Get film details             | -                                 | { film }                        | Yes           | admin, viewer |
 | GET    | /api/films/:id/video  | Get film video URL           | -                                 | { videoUrl }                    | Yes           | admin, viewer |
 | GET    | /api/films/:id/thumbnail | Get film thumbnail URL     | -                                 | { thumbnailUrl }                | Yes           | admin, viewer |
+| DELETE | /api/films/:id        | Delete film                  | -                                 | { message }                    | Yes           | admin         |
 
 ---
 
