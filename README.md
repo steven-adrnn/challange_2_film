@@ -37,7 +37,7 @@ Proyek ini adalah sebuah aplikasi backend berbasis Node.js yang menyediakan API 
     "email": "user@example.com",
     "username": "username",
     "password": "password",
-    "role": "admin" // atau "viewer"
+    "role": "admin atau viewer"
   }
   ```
 - **Response:**
