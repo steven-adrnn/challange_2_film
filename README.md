@@ -2,8 +2,8 @@
 
 Proyek ini adalah sebuah aplikasi backend berbasis Node.js yang menyediakan API untuk manajemen film, artis, dan genre. Aplikasi ini menggunakan Express sebagai framework web, Sequelize sebagai ORM untuk berinteraksi dengan database, serta JWT untuk autentikasi dan otorisasi berbasis peran (admin dan viewer). Fitur unggulan termasuk upload video dan thumbnail film, pencarian film, serta pengelolaan data artis dan genre dengan hak akses yang berbeda.
 
-Link deploy Backend: https://backend-production-ab74.up.railway.app
-Link Deploy Frontend: https://challange-2-film.vercel.app
+1. Link deploy Backend: https://lace-lava-banana.glitch.me (ganti deploy backend karena kredit railway saya habis)
+2. Link Deploy Frontend: https://challange-2-film.vercel.app
 
 
 # Tech Stack yang Digunakan
