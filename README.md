@@ -2,10 +2,6 @@
 
 Proyek ini adalah sebuah aplikasi backend berbasis Node.js yang menyediakan API untuk manajemen film, artis, dan genre. Aplikasi ini menggunakan Express sebagai framework web, Sequelize sebagai ORM untuk berinteraksi dengan database, serta JWT untuk autentikasi dan otorisasi berbasis peran (admin dan viewer). Fitur unggulan termasuk upload video dan thumbnail film, pencarian film, serta pengelolaan data artis dan genre dengan hak akses yang berbeda.
 
-1. Link deploy Backend: https://lace-lava-banana.glitch.me (ganti deploy backend karena kredit railway saya habis)
-2. Link Deploy Frontend: https://challange-2-film.vercel.app
-
-
 # Tech Stack yang Digunakan
 
 - Node.js
@@ -271,16 +267,27 @@ Proyek ini adalah sebuah aplikasi backend berbasis Node.js yang menyediakan API 
 # Konfigurasi Proyek dan Cara Menjalankan Secara Lokal
 
 1. Salin file `.env.example` menjadi `.env` dan sesuaikan konfigurasi variabel lingkungan seperti `PORT`, `DATABASE_URL`, dan `JWT_SECRET`.
-2. Install dependencies dengan perintah:
+2. Masuk ke folder backend lalu frontend
+3. Install dependencies dengan perintah:
    ```
    npm install
    ```
-3. Jalankan migrasi dan sinkronisasi database (jika ada).
-4. Jalankan server dengan perintah:
+4. Jalankan migrasi dan sinkronisasi database (jika ada).
+5. Jalankan server dengan perintah:
    ```
    npm start
    ```
-5. Server akan berjalan di port yang telah dikonfigurasi (default 3001).
-6. Gunakan aplikasi klien atau tools seperti Postman untuk mengakses API dengan endpoint yang telah didokumentasikan.
+6. Server akan berjalan di port yang telah dikonfigurasi (default 3001).
+7. Gunakan aplikasi klien atau tools seperti Postman untuk mengakses API dengan endpoint yang telah didokumentasikan.
 
+
+# Akun default untuk login
+1. Akun admin: 
+    - Email: admin@gmail.com
+    - Password: 12345678
+2. Akun viewer: 
+    - Email: viewer@gmail.com
+    - Password: 12345678
 ---
+
+
